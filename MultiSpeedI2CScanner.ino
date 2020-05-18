@@ -6,8 +6,6 @@
 //    DATE: 2013-11-05
 //     URL: http://forum.arduino.cc/index.php?topic=197360
 //
-// Released to the public domain
-//
 
 #include <Wire.h>
 #include <Arduino.h>
