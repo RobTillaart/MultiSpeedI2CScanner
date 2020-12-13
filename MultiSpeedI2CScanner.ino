@@ -26,8 +26,8 @@ int selectedWirePort = 0;
 long speed[10] = { 100, 200, 300, 400 };
 int speeds;
 
-int addressStart = 0;
-int addressEnd = 127;
+int addressStart = 8;
+int addressEnd = 119;
 
 
 // DELAY BETWEEN TESTS
@@ -203,7 +203,7 @@ void setAddress()
   if (addressStart == 0)
   {
     addressStart = 8;
-    addressEnd = 120;
+    addressEnd = 119;
   }
   else
   {
