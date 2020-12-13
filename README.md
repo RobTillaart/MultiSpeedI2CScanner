@@ -82,8 +82,8 @@ PrintFound will only generate a line if an I2C device is found on that address.
 
 **h** toggles the printing of a header.
 
-**a** toggles the range of addresses scanned, normally the full range 0 .. 127 is scanned 
-but as some addresses are reserved, one can limit this range to 8 .. 119 .
+**a** toggles the range of addresses scanned, default the range 8 .. 119 is scanned,
+but one can extend this range to 0 .. 127. **Note:** some addresses are reserved.
 
 ### Speeds
 
