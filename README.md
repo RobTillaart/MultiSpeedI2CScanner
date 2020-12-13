@@ -1,7 +1,7 @@
 
 # Arduino MultiSpeed I2C Scanner
 
-## Version: 0.1.11
+## Version: 0.1.12
 
 ## Description
 
@@ -30,7 +30,7 @@ Scan mode:
 Output:
 	p = toggle printAll - printFound.
 	h = toggle header - noHeader.
-	a = toggle address range, 0..127 - 8..120
+	a = toggle address range, 0..127 - 8..119
 Speeds:
 	0 = 100..800 Khz - step 100  (warning - can block!!)
 	1 = 100 KHz
@@ -78,7 +78,7 @@ PrintFound will only generate a line if an I2C device is found on that address.
 **h** toggles the printing of a header.
 
 **a** toggles the range of addresses scanned, normally the full range 0 .. 127 is scanned 
-but as some addresses are reserved, one can limit this range to 8 .. 120 .
+but as some addresses are reserved, one can limit this range to 8 .. 119 .
 
 ### Speeds
 
