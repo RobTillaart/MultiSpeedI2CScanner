@@ -4,7 +4,15 @@ MultiSpeedI2CScanner
 
 ## Version 
 
-0.1.11
+0.1.13
+
+### 0.1.13  2020-12-12
+
+Add arduino-ci build process, somehow.
+
+### 0.1.12  2020-12-12
+
+FIx #4, default address range = 08...119 (0-7 and 120-127 are special)
 
 ### 0.1.11  2018-07-20
 
