@@ -6,7 +6,7 @@
 
 # Arduino MultiSpeed I2C Scanner
 
-## Version: 0.1.12
+## Version: 0.1.13
 
 ## Description
 
@@ -96,3 +96,4 @@ http://i2c.info/i2c-bus-specification
 NOTE: not all processors will support these higher speeds. 
 This can show up as blocking or it can even look like it is working.
 Check your datasheet to see which speeds are applicable for the processor in use.
+
