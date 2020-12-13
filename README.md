@@ -22,7 +22,7 @@ many devices above the standard 100KHz speed.
 ```
 <speeds = 50 100 150 200 250 300 350 400 >
 
-Arduino MultiSpeed I2C Scanner - 0.1.10
+Arduino MultiSpeed I2C Scanner - 0.1.13
 
 I2C ports: 1  Current: Wire0
 	@ = toggle Wire - Wire1 - Wire2 [TEENSY 3.5 or Arduino Due]
@@ -35,7 +35,7 @@ Scan mode:
 Output:
 	p = toggle printAll - printFound.
 	h = toggle header - noHeader.
-	a = toggle address range, 0..127 - 8..119
+	a = toggle address range, 0..127 - 8..119 (default)
 Speeds:
 	0 = 100..800 Khz - step 100  (warning - can block!!)
 	1 = 100 KHz
