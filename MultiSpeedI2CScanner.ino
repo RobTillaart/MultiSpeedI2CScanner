@@ -34,6 +34,7 @@ int addressEnd = 119;
 #ifndef RESTORE_LATENCY
 #define RESTORE_LATENCY  5    // for delay between tests of found devices.
 #endif
+
 bool delayFlag = false;
 
 
@@ -55,6 +56,10 @@ uint32_t startScan;
 uint32_t stopScan;
 
 
+///////////////////////////////////////////////////
+//
+// MAIN CODE
+//
 void setup()
 {
   Serial.begin(115200);
