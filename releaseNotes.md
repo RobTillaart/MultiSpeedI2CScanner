@@ -8,7 +8,9 @@ MultiSpeedI2CScanner
 
 ### 0.1.13  2020-12-12
 
-Add arduino-ci build process, somehow.
+Add arduino-ci build process.
+Added a dummy examples folder with the same .ino source.
+This shows that the sketch compiles well.
 
 ### 0.1.12  2020-12-12
 
