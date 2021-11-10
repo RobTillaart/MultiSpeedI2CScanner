@@ -66,8 +66,8 @@ void setup()
   Serial.begin(115200);
 
 #if defined (ESP8266) || defined(ESP32)
-  uint8_t sda = 21;
-  uint8_t scl = 22;
+  uint8_t sda = 14;  // 21
+  uint8_t scl = 15;  // 22
   Wire.begin(sda, scl, 100000);  // ESP32 - change config pins if needed.
 #else
   Wire.begin();
@@ -327,7 +327,7 @@ void displayHelp()
   Serial.print(wirePortCount);
   Serial.print(F("  Current: Wire"));
   Serial.println(selectedWirePort);
-  Serial.println(F("\t@ = toggle Wire - Wire1 - Wire2 [TEENSY 3.5 or Arduino Due]"));
+  Serial.println(F("\t@ = toggle Wire - Wire1 .. Wire5 [e.g. TEENSY or Arduino Due]"));
 
   Serial.println(F("Scan mode:"));
   Serial.println(F("\ts = single scan"));
