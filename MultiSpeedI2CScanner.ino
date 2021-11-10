@@ -111,7 +111,7 @@ void loop()
     case '@':
       selectedWirePort = (selectedWirePort + 1) % wirePortCount;
       Serial.print(F("<I2C PORT=Wire"));
-      Serial.println(selectedWirePort);
+      Serial.print(selectedWirePort);
       Serial.println(F(">"));
       switch (selectedWirePort)
       {

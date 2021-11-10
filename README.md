@@ -111,3 +111,4 @@ Check your datasheet to see which speeds are applicable for the processor in use
 - add watchdog reset (at least AVR - 8 seconds 0.2.0 )
 - create an I2Scanner class
 - r = reset (defaults)
+- non-AVR command behind a ```#ifdef``` ?
