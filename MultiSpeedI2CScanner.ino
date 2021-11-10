@@ -1,19 +1,20 @@
 //
 //    FILE: MultiSpeedI2CScanner.ino
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.1.13
+// VERSION: 0.1.14
 // PURPOSE: I2C scanner at different speeds
 //    DATE: 2013-11-05
 //     URL: https://github.com/RobTillaart/MultiSpeedI2CScanner
 //     URL: http://forum.arduino.cc/index.php?topic=197360
 //
 
+
 #include <Arduino.h>
 #include <Wire.h>
 
-TwoWire *wi;
+TwoWire *wire;
 
-const char version[] = "0.1.13";
+const char version[] = "0.1.14";
 
 
 // INTERFACE COUNT (TESTED TEENSY 3.5 AND ARDUINO DUE ONLY)
@@ -65,8 +66,8 @@ void setup()
   Serial.begin(115200);
 
 #if defined (ESP8266) || defined(ESP32)
-  uint8_t sda = 21;
-  uint8_t scl = 22;
+  uint8_t sda = 14;  // 21
+  uint8_t scl = 15;  // 22
   Wire.begin(sda, scl, 100000);  // ESP32 - change config pins if needed.
 #else
   Wire.begin();
@@ -84,8 +85,16 @@ void setup()
   Wire3.begin();
   wirePortCount++;
 #endif
+#if defined WIRE_IMPLEMENT_WIRE4 || WIRE_INTERFACES_COUNT > 4
+  Wire4.begin();
+  wirePortCount++;
+#endif
+#if defined WIRE_IMPLEMENT_WIRE5 || WIRE_INTERFACES_COUNT > 5
+  Wire5.begin();
+  wirePortCount++;
+#endif
 
-  wi = &Wire;
+  wire = &Wire;
 
   Serial.println();
   setSpeed('9');
@@ -107,21 +116,31 @@ void loop()
       switch (selectedWirePort)
       {
         case 0:
-          wi = &Wire;
+          wire = &Wire;
           break;
 #if defined WIRE_IMPLEMENT_WIRE1 || WIRE_INTERFACES_COUNT > 1
         case 1:
-          wi = &Wire1;
+          wire = &Wire1;
           break;
 #endif
 #if defined WIRE_IMPLEMENT_WIRE2 || WIRE_INTERFACES_COUNT > 2
         case 2:
-          wi = &Wire2;
+          wire = &Wire2;
           break;
 #endif
 #if defined WIRE_IMPLEMENT_WIRE3 || WIRE_INTERFACES_COUNT > 3
         case 3:
-          wi = &Wire3;
+          wire = &Wire3;
+          break;
+#endif
+#if defined WIRE_IMPLEMENT_WIRE4 || WIRE_INTERFACES_COUNT > 4
+        case 4:
+          wire = &Wire4;
+          break;
+#endif
+#if defined WIRE_IMPLEMENT_WIRE5 || WIRE_INTERFACES_COUNT > 5
+        case 5:
+          wire = &Wire5;
           break;
 #endif
       }
@@ -308,7 +327,7 @@ void displayHelp()
   Serial.print(wirePortCount);
   Serial.print(F("  Current: Wire"));
   Serial.println(selectedWirePort);
-  Serial.println(F("\t@ = toggle Wire - Wire1 - Wire2 [TEENSY 3.5 or Arduino Due]"));
+  Serial.println(F("\t@ = toggle Wire - Wire1 .. Wire5 [e.g. TEENSY or Arduino Due]"));
 
   Serial.println(F("Scan mode:"));
   Serial.println(F("\ts = single scan"));
@@ -361,6 +380,7 @@ void I2Cscan()
       Serial.print(F("--------"));
     }
     Serial.println();
+    delay(100);
   }
 
   for (uint8_t address = addressStart; address <= addressEnd; address++)
@@ -383,10 +403,10 @@ void I2Cscan()
         return; 
       }
 #else
-      wi->setClock(speed[s] * 1000UL);
+      wire->setClock(speed[s] * 1000UL);
 #endif
-      wi->beginTransmission (address);
-      found[s] = (wi->endTransmission () == 0);
+      wire->beginTransmission (address);
+      found[s] = (wire->endTransmission () == 0);
       fnd |= found[s];
       // give device 5 millis
       if (fnd && delayFlag) delay(RESTORE_LATENCY);
