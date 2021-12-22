@@ -8,12 +8,18 @@ https://github.com/RobTillaart/MultiSpeedI2CScanner
 
 ## Version 
 
-0.1.14
+0.1.15
+
+
+### 0.1.15  2021-12-22
+
+- change Khz =>KHz
+- update license
 
 
 ### 0.1.14  2021-11-10
 
-- update Arduino-CI buid process
+- update Arduino-CI build process
 - add badges to readme.md
 - updated readme.md
 - support up to 5 Wire buses
@@ -35,9 +41,9 @@ https://github.com/RobTillaart/MultiSpeedI2CScanner
 ### 0.1.11  2018-07-20
 
 - Fix failing TWBR setting
-- added yield() during scan to improve ESP behavior.
+- added yield() during scan to improve ESP behaviour.
 - added disable interrupts flag
-- refactor / cleanup
+- refactor / clean up
 
 ### 0.1.10  2018-04-02
 
@@ -76,6 +82,8 @@ note the latter one must adjust the pins in the code.
 - extended help
 
 ### older versions not documented
+(started 2013-11-05 ?)
 
 
-// END OF FILE
+// -- END OF FILE --
+
