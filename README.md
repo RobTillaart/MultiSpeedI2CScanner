@@ -116,12 +116,11 @@ Check your datasheet to see which speeds are applicable for the processor in use
 #### Must
 
 #### Should
-- r = reset (defaults)
 
 #### Could
 
 - add watchdog reset (at least AVR - 8 seconds 0.2.0 )
 - non-AVR command behind a ```#ifdef``` ?
-- rename releaseNotes.md to changelog (in line with most libs)
+- rename releaseNotes.md to changelog.md (in line with libraries)
 - I2C GENERIC RESET address 0x00 CMD 0x06
 
