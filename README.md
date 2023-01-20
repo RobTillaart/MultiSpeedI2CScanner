@@ -21,6 +21,11 @@ The scanner provides an overview of which addresses can be found
 at which speed. This allows one to optimize the I2C performance of
 many devices above the standard 100KHz speed.
 
+#### Related
+
+build your own I2C scanner with:
+- https://github.com/RobTillaart/I2C_SCANNER
+
 
 ## Menu dialog
 
@@ -108,8 +113,14 @@ Check your datasheet to see which speeds are applicable for the processor in use
 
 ## Future
 
-- add watchdog reset (at least AVR - 8 seconds 0.2.0 )
-- create an I2CScanner class
+#### Must
+
+#### Should
 - r = reset (defaults)
+
+#### Could
+
+- add watchdog reset (at least AVR - 8 seconds 0.2.0 )
 - non-AVR command behind a ```#ifdef``` ?
+- rename releaseNotes.md to changelog (in line with most libs)
 
