@@ -9,7 +9,7 @@
 # Arduino MultiSpeed I2C Scanner
 
 
-## Version: 0.1.15
+## Version: 0.1.16
 
 
 ## Description
@@ -60,6 +60,7 @@ Speeds:
 	O = 5000 KHz
 	P =  100 400 1000 3400 5000 KHz (standards)
 
+	r = reset to startup defaults.
 	? = help - this page
 ```
 
