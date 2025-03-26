@@ -31,7 +31,7 @@ many devices above the standard 100KHz speed.
 
 ### I2C TIMEOUT
 
-Since version 0.1.18 the MultiSpeed I2C Scanner has a time out
+Since version 0.2.0 the MultiSpeed I2C Scanner has a time out
 of default 25 milliseconds on the I2C transactions. 
 This feature prevents locking of the I2C scanner and is large 
 enough even for low I2C speeds.
