@@ -17,7 +17,7 @@ not used.
 # Arduino MultiSpeed I2C Scanner
 
 
-## Version: 0.1.17
+## Version: 0.2.0
 
 
 ## Description
