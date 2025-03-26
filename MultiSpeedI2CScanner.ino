@@ -111,6 +111,9 @@ void setup()
 #endif
 
   wire = &Wire;
+#if defined(WIRE_HAS_TIMEOUT)
+      wire->setWireTimeout(I2C_TIMEOUT, false /* NO RESET */);
+#endif
 
   Serial.println();
   reset();
